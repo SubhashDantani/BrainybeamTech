@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+.parent{
+    overflow: auto;
+    margin-left: 20%;
+  
+    
+}
+
+
+.box{
+    background: white;
+    width: 400px;
+    height: 400px;
+    padding:50px;
+    margin: 1px;
+    float:left;
+    
+    
+}
+
+
+.log{
+    text-align: center;
+    color: darkslateblue;
+}
+.last{
+    text-align: center;
+}
+.user{
+    font-size: 15px;
+    color: darkslateblue;
+    
+}
+.pass{
+    font-size: 15px;
+    color: darkslateblue;
+}
+
+.mail{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    Border: 2px solid #cbcccc;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.btn{
+    border:0;
+    
+    margin : 20px auto;
+    padding: 14px 40px ;
+    width: 200px;
+    /* outline : none; */
+    color :white;
+    border-radius: 24px;
+    /* transition: 0.25s; */
+    /* cursor: pointer;  */
+    background-color:#eb0a31;
+}
+.fa{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    color : white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.tw{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    color : white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.abc{
+    text-align: center;
+}
+.pqr{
+    text-align: center;
+}
