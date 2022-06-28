@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Signup,Entry
+from .models import Signup,Entry,Register
 
 # Create your views here.
 def hello(request):
@@ -19,3 +19,13 @@ def login(request):
 
 def home(request):
     return render(request,'pages/home.html')
+
+def signupview(request):
+    if request.method=='POST':
+        model=Register()
+        model.name=request.POST['name']
+        model.email=request.POST['username']
+        model.contact=request.POST['contact']
+        model.password=request.POST['password']
+        model.save()
+    return render(request,'pages/register.html')
