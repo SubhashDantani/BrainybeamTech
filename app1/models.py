@@ -1,4 +1,5 @@
 from datetime import date
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
@@ -74,3 +75,11 @@ class Register(models.Model):
     email=models.EmailField()
     contact=models.PositiveIntegerField()
     password=models.CharField(max_length=10)
+
+class Pro(models.Model):
+    name=models.CharField(max_length=10)
+    des=models.TextField()
+    price=models.IntegerField()
+    img=models.ImageField(upload_to='pro')
+    review=models.TextField() 
+    

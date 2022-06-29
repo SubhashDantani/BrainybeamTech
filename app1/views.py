@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Signup,Entry,Register
+from .models import Signup,Entry,Register,Pro
 
 # Create your views here.
 def hello(request):
@@ -29,3 +29,11 @@ def signupview(request):
         model.password=request.POST['password']
         model.save()
     return render(request,'pages/register.html')
+
+def productview(request,abc):
+    v=Pro.objects.get(id=abc)
+    return render(request,'productview.html',{'v':v})
+
+def proall(request):
+    l=Pro.objects.all()
+    return render(request,'proall.html',{'l':l})
