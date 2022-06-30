@@ -14,25 +14,23 @@
         </div>
     </div>
 <div class="parent">
-    <form action="loginpage.html" >
+    <form method="POST">
+        {% csrf_token %}
     <div class="box">
         <div class="user">
         <label for="text"> <b> Username or Email</b></label>
         
-        <input type="Email" placeholder="Username Or Email" class="mail">
+        <input type="email" name="email" placeholder="Username Or Email" class="mail">
         </div>
     
         <div class="pass">
         <label for="text"><b>Password</b></label>
         
-        <input type="password" placeholder="Password" class="mail">
+        <input type="password" name="pass" placeholder="Password" class="mail">
         </div>
     
         <div>
-        <label><input type="checkbox">Remember me</label>
-        </div>
-        <div>
-        <button class="btn"><b> Login now</b></button>
+            <input type="submit" value="Login">
         </div>
     </div>
         <div class="box">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Signup,Entry,Register,Pro
 
@@ -14,9 +14,6 @@ def contact(request):
 def signup(request):
     return render(request,'pages/signup.html')
 
-def login(request):
-    return render(request,'pages/login.html',)
-
 def home(request):
     return render(request,'pages/home.html')
 
@@ -28,6 +25,7 @@ def signupview(request):
         model.contact=request.POST['contact']
         model.password=request.POST['password']
         model.save()
+        return redirect('login')
     return render(request,'pages/register.html')
 
 def productview(request,abc):
@@ -37,3 +35,19 @@ def productview(request,abc):
 def proall(request):
     l=Pro.objects.all()
     return render(request,'proall.html',{'l':l})
+
+def loginview(request):
+    if request.method=='POST':
+        try:
+            print("123")
+            m=Signup.objects.get(email=request.POST['email'])
+            print(m)
+            if m.password==request.POST['pass']:
+                print("pass")
+                return redirect('proall')
+            else:
+                return HttpResponse("wrong password")
+        except:
+            return HttpResponse("wrong email")
+    return render(request,'pages/login.html')
+
