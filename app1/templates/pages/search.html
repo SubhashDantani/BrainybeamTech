@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <form method="GET">
+            <input type="text" name="search" placeholder="Enter text">
+
+        </form>
+
+        {% for i in p %}
+        {{ i.name }}
+        {{ i.des }}
+        {{ i.price }}
+        {{ i.review }}
+        {% endfor%}
+    </body>
+</html>
