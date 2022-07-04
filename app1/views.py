@@ -1,12 +1,22 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import Signup,Entry,Register,Pro
+from django.db.models import Q
 
 # Create your views here.
 def hello(request):
     a=Signup.objects.all()
     b=Entry.objects.all()
     return render(request,'pages/index.html',{'s':a,'r':b})
+
+def searchview(request):
+    q=request.GET.get('search')
+    if q:
+        pr=Pro.objects.filter(Q(name__icontains=q)| Q(des__icontains=q) |Q(price__icontains=q))
+        data={'p':pr}
+    else:
+        data={}
+    return data
 
 def contact(request):
     return HttpResponse("welcome to contact page")
@@ -15,7 +25,8 @@ def signup(request):
     return render(request,'pages/signup.html')
 
 def home(request):
-    return render(request,'pages/home.html')
+    s=searchview(request)
+    return render(request,'pages/home.html',s)
 
 def signupview(request):
     if request.method=='POST':
@@ -31,6 +42,11 @@ def signupview(request):
 def productview(request,abc):
     v=Pro.objects.get(id=abc)
     return render(request,'productview.html',{'v':v})
+
+def productdelete(request,abc):
+    v=Pro.objects.get(id=abc)
+    v.delete()
+    return redirect('proall')
 
 def proall(request):
     l=Pro.objects.all()
@@ -51,3 +67,5 @@ def loginview(request):
             return HttpResponse("wrong email")
     return render(request,'pages/login.html')
 
+def aboutview(request):
+    return render(request,'pages/about.html')

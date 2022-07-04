@@ -24,7 +24,7 @@ class Signup(models.Model):
 
     username=models.CharField(verbose_name='Enter your name',max_length=10)
     email=models.EmailField()
-    ph_no=models.PositiveIntegerField()
+      
     password=models.CharField(max_length=8)
     address=models.TextField(default="")
     status=models.BooleanField(default=False,verbose_name='Subscription done?')

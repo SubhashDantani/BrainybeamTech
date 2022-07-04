@@ -1,5 +1,5 @@
-<html>
-    <body>
+{% extends 'pages/base.html' %}
+{% block content %}
         <table border="2px">
             <tr>
                 <th>name</th>
@@ -8,16 +8,18 @@
                 <th>View</th>
             </tr>
             {% for i in l %}
-
             <tr>
        <td>{{ i.name }}</td> 
        <td>{{ i.price }}</td> 
        <td><img src="{{ i.img.url }}" style="height: 200px; width:200px;"></td>
        <td><a href="{% url 'proview' i.id  %}">View</a></td>
+       <td><a href="{% url 'prodel' i.id  %}">delete</a></td>
+
 
             </tr>
             {% endfor %}
 
         </table>
+        {% endblock %}
             </body>
 </html>
