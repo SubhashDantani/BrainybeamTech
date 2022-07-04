@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body bgcolor="#f8f9fa">
+    
+    <div>
+        <div class="log">
+        <h1 class="login">Register form</h1>
+        </div>
+    </div>
+<div class="parent">
+    <form  method="POST">
+    {% csrf_token %}
+    <div class="box">
+
+        <div class="user">
+            <label for="text"> <b> Name</b></label>
+            
+            <input type="name" placeholder="Username" name="name" class="mail">
+            </div>
+        <div class="user">
+        <label for="email"> <b>  Email</b></label>
+        
+        <input type="email" placeholder=" Email" name="username" class="mail">
+        </div>
+        <div class="user">
+            <label for="number"> <b> Contact no</b></label>
+            
+            <input type="number" placeholder="number" name="contact" class="mail">
+            </div>
+    
+        <div class="pass">
+        <label for="password"><b>Password</b></label>
+        
+        <input type="password" placeholder="Password" class="mail" name="password">
+        </div>
+    
+        
+        <div>
+        <button class="btn" type="submit"><b> Login now</b></button>
+        </div>
+    </div>
+        
+    
+    </form>
+</div>
+
+    <div class="last">
+        <p>&copy;2020 Minimal login form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+    </div>
+
+</body>
+</html>

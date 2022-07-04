@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <h1>welcome to home</h1>
+
+
+
+        
+
+       <br>
+     
+        <table border="2px">
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>date</th>
+                <th>Gender</th>
+                
+                
+            </tr>
+            
+        {% for i in s %}
+            <tr>
+                <td>
+                    {{ i.username }}
+                </td>
+                <td> 
+                    {{ i.email }}
+                </td>
+                <td> 
+                    {{ i.date }}
+                </td>
+                <td> 
+                    {{ i.gender }}
+                </td>
+                
+                
+            </tr>
+            {% endfor %}
+        </table>
+        <table border="2px">
+            <tr>
+                <th>headline</th>
+                <th>publication date</th>
+                <th>blog</th>
+                
+            </tr>
+            
+        {% for i in r %}
+            <tr>
+                <td>
+                    {{ i.headline }}
+                </td>
+                <td> 
+                    {{ i.pub_date }}
+                </td>
+                <td>
+                    {{ i.blog}}
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

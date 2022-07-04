@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <table border="2px">
+            <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>image</th>
+                <th>View</th>
+            </tr>
+            {% for i in l %}
+
+            <tr>
+       <td>{{ i.name }}</td> 
+       <td>{{ i.price }}</td> 
+       <td><img src="{{ i.img.url }}" style="height: 200px; width:200px;"></td>
+       <td><a href="{% url 'proview' i.id  %}">View</a></td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+            </body>
+</html>

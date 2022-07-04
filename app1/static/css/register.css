@@ -1,0 +1,88 @@
+
+
+
+
+.box{
+    overflow: auto;
+    background: white;
+    text-align: center;
+    width: 800px;
+    /* height: 500px; */
+    padding:50px;
+    margin: auto;
+    
+    
+    
+}
+
+
+.log{
+    text-align: center;
+    color: darkslateblue;
+}
+.last{
+    text-align: center;
+}
+.user{
+    font-size: 15px;
+    color: darkslateblue;
+    
+}
+.pass{
+    font-size: 15px;
+    color: darkslateblue;
+}
+
+.mail{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    Border: 2px solid #cbcccc;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.btn{
+    border:0;
+    
+    margin : 20px auto;
+    padding: 14px 40px ;
+    width: 200px;
+    /* outline : none; */
+    color :white;
+    border-radius: 24px;
+    background-color:#eb0a31;
+}
+.fa{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    color : white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.tw{
+    border:0;
+    display: block;
+    margin : 20px auto;
+    text-align: center;
+    padding: 14px 10px ;
+    width : 300px;
+    outline : none;
+    color : white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.abc{
+    text-align: center;
+}
+.pqr{
+    text-align: center;
+}
