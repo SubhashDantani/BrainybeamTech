@@ -49,8 +49,11 @@ def productdelete(request,abc):
     return redirect('proall')
 
 def proall(request):
-    l=Pro.objects.all()
-    return render(request,'proall.html',{'l':l})
+    if 'xyz' in request.session.keys():
+        l=Pro.objects.all()
+        return render(request,'proall.html',{'l':l})
+    else:
+        return redirect('loginview')
 
 def loginview(request):
     if request.method=='POST':
@@ -59,7 +62,9 @@ def loginview(request):
             m=Signup.objects.get(email=request.POST['email'])
             print(m)
             if m.password==request.POST['pass']:
+                request.session['xyz']=m.id
                 print("pass")
+
                 return redirect('proall')
             else:
                 return HttpResponse("wrong password")
@@ -69,3 +74,18 @@ def loginview(request):
 
 def aboutview(request):
     return render(request,'pages/about.html')
+
+def logout(request):
+    if 'xyz' in request.session.keys():
+        del request.session['xyz']
+        return redirect('loginview')
+    else:
+        return redirect('loginview')
+    
+def productadd(request):
+    if request.method=='POST':
+        model=Pro(request.POST)
+        model.name=request.POST['name']
+        model.des=request.POST['des']
+        model.img=request.FILES.get('image')
+        model.save()
